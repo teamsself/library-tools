@@ -4,7 +4,7 @@
  * @param file 上传的文件
  * @param fn 回调函数(el:文件内容)=>{}
  */
-export const readFile = (file: File, fn: () => void): void => {
+export const ut_readFile = (file: File, fn: () => void): void => {
   //支持chrome IE10
   if (window.FileReader) {
     const reader = new FileReader();

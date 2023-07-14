@@ -4,7 +4,7 @@
  * @param key string
  * @return string
  */
-export const getLS = (key: string) => {
+export const ut_getLS = (key: string) => {
   if (typeof key !== "string") throw new Error("key is not string");
   const Breadcrumbs = localStorage.getItem(key);
   return Breadcrumbs || "";

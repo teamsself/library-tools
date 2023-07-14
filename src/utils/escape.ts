@@ -20,4 +20,4 @@ import { escape } from "lodash";
  * @param string The string to escape.
  * @return Returns the escaped string.
  */
-export const getEscape = escape;
+export const ut_escape = escape;

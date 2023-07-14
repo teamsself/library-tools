@@ -4,7 +4,7 @@
  * @param _data string
  * @return boolean
  */
-export const isEmpty: (_data: string) => boolean = (_data) => {
+export const ut_isEmpty: (_data: string) => boolean = (_data) => {
   if (typeof _data !== "string") throw new Error("_data is not string");
 
   if (_data === undefined || _data === null) return true;

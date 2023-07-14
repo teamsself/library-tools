@@ -4,7 +4,7 @@
  * @param value string | number
  * @return string 123,456,789
  */
-export const getThousands = (value: string | number) => {
+export const ut_thousands = (value: string | number) => {
   if (typeof value !== "string" || typeof value !== "number")
     throw new Error("key is not string or number");
 

@@ -13,4 +13,4 @@ import { unescape } from "lodash";
  * @param string The string to unescape.
  * @return Returns the unescaped string.
  */
-export const getUnEscape = unescape;
+export const ut_unescape = unescape;

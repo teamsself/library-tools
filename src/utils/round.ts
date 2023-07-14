@@ -9,4 +9,4 @@ import { round } from "lodash";
  * @param precision The precision to round to.
  * @return Returns the rounded number.
  */
-export const getRound = round;
+export const ut_round = round;

@@ -3,7 +3,7 @@
  *
  * @return boolean
  */
-export const isWXBrowser: () => boolean = () => {
+export const ut_isWXBrowser: () => boolean = () => {
   const ua = navigator.userAgent.toLowerCase();
   return /micromessenger/.test(ua) ? true : false;
 };

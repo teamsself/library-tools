@@ -3,8 +3,8 @@
  *
  * @return boolean
  */
-export const isMobile = (): boolean => {
-  return !!navigator.userAgent.match(
-    /(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i
-  );
+export const ut_isMobile = (): boolean => {
+  return !!RegExp(
+    /(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i,
+  ).exec(navigator.userAgent);
 };

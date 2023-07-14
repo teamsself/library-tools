@@ -22,4 +22,4 @@ import { debounce } from "lodash";
  * @param options.trailing Specify invoking on the trailing edge of the timeout.
  * @return Returns the new debounced function.
  */
-export const getDebounceFn = debounce;
+export const ut_debounce = debounce;

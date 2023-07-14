@@ -2,7 +2,7 @@
  * @Author: wang shuo
  * @Date: 2023-05-06 00:19:21
  * @LastEditors: W·S
- * @LastEditTime: 2023-07-10 15:29:03
+ * @LastEditTime: 2023-07-14 16:42:55
  * @Description: Description
  */
 // eslint-disable-next-line no-undef
@@ -13,9 +13,8 @@ module.exports = {
   },
   extends: [
     "eslint:recommended",
-    "plugin:prettier/recommended",
     "plugin:@typescript-eslint/recommended",
-    "prettier",
+    "plugin:prettier/recommended",
   ],
   overrides: [],
   parser: "@typescript-eslint/parser",
@@ -23,8 +22,8 @@ module.exports = {
     ecmaVersion: "latest",
     sourceType: "module",
   },
-  plugins: ["@typescript-eslint"],
+  plugins: ["@typescript-eslint", "prettier"],
   rules: {
-    "prettier/prettier": ["error", {}],
+    // "prettier/prettier": ["error", {}],
   },
 };

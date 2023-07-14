@@ -18,4 +18,4 @@ import { throttle } from "lodash";
  * @param options.trailing Specify invoking on the trailing edge of the timeout.
  * @return Returns the new throttled function.
  */
-export const getThrottleFn = throttle;
+export const ut_throttle = throttle;
