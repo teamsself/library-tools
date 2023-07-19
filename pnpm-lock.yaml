@@ -5,7 +5,7 @@ dependencies:
     specifier: ^10.3.3
     version: registry.npmmirror.com/glob@10.3.3
   lodash:
-    specifier: ^4.17.10
+    specifier: ^4.17.21
     version: registry.npmmirror.com/lodash@4.17.21
 
 devDependencies:
