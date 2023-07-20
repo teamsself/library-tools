@@ -13,3 +13,4 @@ export * from "./utils/debounce";
 export * from "./utils/throttle";
 export * from "./utils/escape";
 export * from "./utils/unescape";
+export declare const setUTENV: (format: string) => void;

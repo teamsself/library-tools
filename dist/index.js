@@ -18,3 +18,9 @@ import "./utils/toNumber-ef18ccbb.js";
 import "./utils/toString-39786259.js";
 import "./utils/debounce-8133fcce.js";
 import "./utils/_basePropertyOf-d4258b06.js";
+var t = function t(_t) {
+  // window.onload = function () {
+    window.DATAFORMAT = _t;
+  // };
+};
+export { t as setUTENV };

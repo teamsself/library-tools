@@ -1,8 +1,8 @@
 /*
  * @Author: Feix
  * @Date: 2022-11-18 14:00:52
- * @LastEditors: W·S
- * @LastEditTime: 2023-07-14 17:36:48
+ * @LastEditors: huangyuexia
+ * @LastEditTime: 2023-07-20 11:33:41
  * @Description:
  */
 
@@ -15,11 +15,12 @@
 export const ut_dateFormatted = (date: string, type = 0): string => {
   if (typeof date !== "string") throw new Error("date is not string");
   if (date.trim() === "") throw new Error("date is empty");
-
-  console.log("UT_DATAFORMAT", process.env.UT_DATAFORMAT);
+  // @ts-ignore
+  console.log("window.DATAFORMAT", window.DATAFORMAT);
 
   // const format = "YYYY-MM-DD HH:mm:ss";
-  const format = process.env.UT_DATAFORMAT ?? "YYYY-MM-DD HH:mm:ss";
+  // @ts-ignore
+  const format = window.DATAFORMAT ?? "YYYY-MM-DD HH:mm:ss";
   const days = new Date(date);
   const year = days.getUTCFullYear();
   const month = days.getUTCMonth() + 1;

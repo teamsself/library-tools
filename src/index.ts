@@ -1,8 +1,8 @@
 /*
  * @Author: W·S
  * @Date: 2023-07-10 15:23:21
- * @LastEditors: W·S
- * @LastEditTime: 2023-07-14 17:51:43
+ * @LastEditors: huangyuexia
+ * @LastEditTime: 2023-07-20 11:41:07
  * @Description: Description
  */
 export * from "./utils/dateFormatted";
@@ -20,3 +20,8 @@ export * from "./utils/debounce";
 export * from "./utils/throttle";
 export * from "./utils/escape";
 export * from "./utils/unescape";
+
+export const setUTENV = (format: string) => {
+  // @ts-ignore
+  window.DATAFORMAT = format;
+};
