@@ -5,7 +5,7 @@
  * @return string 123,456,789
  */
 export const ut_thousands = (value: string | number) => {
-  if (typeof value !== "string" || typeof value !== "number")
+  if (typeof value !== "string" && typeof value !== "number")
     throw new Error("key is not string or number");
 
   if (!value) {
