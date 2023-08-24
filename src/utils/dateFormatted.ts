@@ -1,11 +1,3 @@
-/*
- * @Author: Feix
- * @Date: 2022-11-18 14:00:52
- * @LastEditors: huangyuexia
- * @LastEditTime: 2023-07-20 11:33:41
- * @Description:
- */
-
 /**
  * @description: 日期格式化(凡日期, 统一调用此方法, 不论是否需要)，使用统一 process.env.DATAFORMAT 格式
  * @param date 日期字符串
@@ -15,12 +7,11 @@
 export const ut_dateFormatted = (date: string, type = 0): string => {
   if (typeof date !== "string") throw new Error("date is not string");
   if (date.trim() === "") throw new Error("date is empty");
-  // @ts-ignore
-  console.log("window.DATAFORMAT", window.DATAFORMAT);
 
-  // const format = "YYYY-MM-DD HH:mm:ss";
-  // @ts-ignore
-  const format = window.DATAFORMAT ?? "YYYY-MM-DD HH:mm:ss";
+  const format =
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    window.DATAFORMAT ?? global.DATAFORMAT ?? "YYYY-MM-DD HH:mm:ss";
   const days = new Date(date);
   const year = days.getUTCFullYear();
   const month = days.getUTCMonth() + 1;

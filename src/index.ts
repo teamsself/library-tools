@@ -1,8 +1,8 @@
 /*
  * @Author: W·S
  * @Date: 2023-07-10 15:23:21
- * @LastEditors: huangyuexia
- * @LastEditTime: 2023-07-20 11:41:07
+ * @LastEditors: W·S
+ * @LastEditTime: 2023-08-24 11:30:33
  * @Description: Description
  */
 export * from "./utils/dateFormatted";
@@ -22,6 +22,13 @@ export * from "./utils/escape";
 export * from "./utils/unescape";
 
 export const setUTENV = (format: string) => {
-  // @ts-ignore
-  window.DATAFORMAT = format;
+  if (window) {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    window.DATAFORMAT = format;
+  } else if (global) {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    global.DATAFORMAT = format;
+  }
 };
