@@ -2,24 +2,32 @@
  * @Author: W·S
  * @Date: 2023-07-10 15:23:21
  * @LastEditors: W·S
- * @LastEditTime: 2023-08-24 11:30:33
+ * @LastEditTime: 2024-01-30 10:06:56
  * @Description: Description
  */
-export * from "./utils/dateFormatted";
-export * from "./utils/downLoadFile";
-export * from "./utils/round";
-export * from "./utils/thousands";
-export * from "./utils/isEmpty";
-export * from "./utils/isMobile";
-export * from "./utils/isWXBrowser";
-export * from "./utils/openNewWin";
-export * from "./utils/readFile";
-export * from "./utils/setLS";
-export * from "./utils/getLS";
-export * from "./utils/debounce";
-export * from "./utils/throttle";
-export * from "./utils/escape";
-export * from "./utils/unescape";
+
+import { ut_getLS } from './utils/getLS';
+import { ut_setLS } from './utils/setLS';
+
+export * from './utils/clone';
+export * from './utils/cloneDeep';
+export * from './utils/dateFormatted';
+export * from './utils/debounce';
+export * from './utils/downLoadFile';
+export * from './utils/escape';
+export * from './utils/getLS';
+export * from './utils/isEmpty';
+export * from './utils/isMobile';
+export * from './utils/isWXBrowser';
+export * from './utils/openNewWin';
+export * from './utils/readFile';
+export * from './utils/regexUtils';
+export * from './utils/round';
+export * from './utils/setLS';
+export * from './utils/thousands';
+export * from './utils/throttle';
+export * from './utils/unescape';
+export * from './utils/uniqueId';
 
 export const setUTENV = (format: string) => {
   if (window) {
@@ -31,4 +39,29 @@ export const setUTENV = (format: string) => {
     // @ts-ignore
     global.DATAFORMAT = format;
   }
+};
+
+/**
+ * 获取当前用户信息
+ */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const setUserInfo = (userInfo: Record<string, any>) => {
+  ut_setLS('userInfo', JSON.stringify(userInfo));
+};
+
+/** 获取当前用户信息 */
+export const getUserInfo = () => {
+  const userInfo = ut_getLS('userInfo');
+  return userInfo ? JSON.parse(userInfo) : {};
+};
+
+/** 获取当前语言环境 */
+export const getLanguage = () => {
+  const language = ut_getLS('language');
+  return language ?? '';
+};
+
+/** 当前语言环境切换 */
+export const setLanguage = (language: string) => {
+  ut_setLS('language', language);
 };

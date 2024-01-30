@@ -1,4 +1,4 @@
-import { throttle } from "lodash";
+import { throttle } from 'lodash';
 
 /**
  * 节流函数

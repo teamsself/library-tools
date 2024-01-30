@@ -5,13 +5,13 @@
  * @returns
  */
 export const ut_dateFormatted = (date: string, type = 0): string => {
-  if (typeof date !== "string") throw new Error("date is not string");
-  if (date.trim() === "") throw new Error("date is empty");
+  if (typeof date !== 'string') throw new Error('date is not string');
+  if (date.trim() === '') throw new Error('date is empty');
 
   const format =
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
-    window.DATAFORMAT ?? global.DATAFORMAT ?? "YYYY-MM-DD HH:mm:ss";
+    window.DATAFORMAT ?? global.DATAFORMAT ?? 'YYYY-MM-DD HH:mm:ss';
   const days = new Date(date);
   const year = days.getUTCFullYear();
   const month = days.getUTCMonth() + 1;
@@ -20,48 +20,48 @@ export const ut_dateFormatted = (date: string, type = 0): string => {
   const minutes = days.getMinutes();
   const seconds = days.getSeconds();
 
-  let data_date = "";
+  let data_date = '';
   switch (type) {
     // 显示 年月日 时分秒
     case 0:
       data_date = format
-        .replace("YYYY", year + "")
-        .replace("MM", month > 9 ? month + "" : "0" + month)
-        .replace("DD", day > 9 ? day + "" : "0" + day)
-        .replace("HH", hours > 9 ? hours + "" : "0" + hours)
-        .replace("mm", minutes > 9 ? minutes + "" : "0" + minutes)
-        .replace("ss", seconds > 9 ? seconds + "" : "0" + seconds);
+        .replace('YYYY', year + '')
+        .replace('MM', month > 9 ? month + '' : '0' + month)
+        .replace('DD', day > 9 ? day + '' : '0' + day)
+        .replace('HH', hours > 9 ? hours + '' : '0' + hours)
+        .replace('mm', minutes > 9 ? minutes + '' : '0' + minutes)
+        .replace('ss', seconds > 9 ? seconds + '' : '0' + seconds);
       break;
     // 显示 年月日
     case 1:
       data_date = format
-        .replace("YYYY", year + "")
-        .replace("MM", month > 9 ? month + "" : "0" + month)
-        .replace("DD", day > 9 ? day + "" : "0" + day);
+        .replace('YYYY', year + '')
+        .replace('MM', month > 9 ? month + '' : '0' + month)
+        .replace('DD', day > 9 ? day + '' : '0' + day);
       break;
     // 显示 时分秒
     case 2:
       data_date = format
-        .replace("HH", hours > 9 ? hours + "" : "0" + hours)
-        .replace("mm", minutes > 9 ? minutes + "" : "0" + minutes)
-        .replace("ss", seconds > 9 ? seconds + "" : "0" + seconds);
+        .replace('HH', hours > 9 ? hours + '' : '0' + hours)
+        .replace('mm', minutes > 9 ? minutes + '' : '0' + minutes)
+        .replace('ss', seconds > 9 ? seconds + '' : '0' + seconds);
       break;
     // 显示 年月日时分
     case 3:
       data_date = format
-        .replace("YYYY", year + "")
-        .replace("MM", month > 9 ? month + "" : "0" + month)
-        .replace("DD", day > 9 ? day + "" : "0" + day)
-        .replace("HH", hours > 9 ? hours + "" : "0" + hours)
-        .replace("mm", minutes > 9 ? minutes + "" : "0" + minutes);
+        .replace('YYYY', year + '')
+        .replace('MM', month > 9 ? month + '' : '0' + month)
+        .replace('DD', day > 9 ? day + '' : '0' + day)
+        .replace('HH', hours > 9 ? hours + '' : '0' + hours)
+        .replace('mm', minutes > 9 ? minutes + '' : '0' + minutes);
       break;
     // 显示 时分
     case 4:
       data_date = format
-        .replace("HH", hours > 9 ? hours + "" : "0" + hours)
-        .replace("mm", minutes > 9 ? minutes + "" : "0" + minutes);
+        .replace('HH', hours > 9 ? hours + '' : '0' + hours)
+        .replace('mm', minutes > 9 ? minutes + '' : '0' + minutes);
       break;
   }
 
-  return data_date.indexOf("NaN") >= 0 ? "--" : data_date;
+  return data_date.indexOf('NaN') >= 0 ? '--' : data_date;
 };

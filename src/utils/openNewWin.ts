@@ -4,10 +4,10 @@
  * @param _url 要打开的页面地址必须以 'http://'或'https://'为开始
  */
 export const ut_openNewWin = (_url: string): void => {
-  if (typeof _url !== "string") {
-    throw new Error("_url is not string");
-  } else if (!_url.startsWith("http://") && !_url.startsWith("https://")) {
-    throw new Error("_url does not start with http:// or https://");
+  if (typeof _url !== 'string') {
+    throw new Error('_url is not string');
+  } else if (!_url.startsWith('http://') && !_url.startsWith('https://')) {
+    throw new Error('_url does not start with http:// or https://');
   }
 
   const u = navigator.userAgent;
@@ -17,10 +17,10 @@ export const ut_openNewWin = (_url: string): void => {
   if (isiOS) {
     window.location.href = _url;
   } else {
-    const a: HTMLAnchorElement = window.document.createElement("a");
-    a.id = "newWindow";
-    a.href = "javascript:void(0)";
-    a.target = "_blank";
+    const a: HTMLAnchorElement = window.document.createElement('a');
+    a.id = 'newWindow';
+    a.href = 'javascript:void(0)';
+    a.target = '_blank';
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     a.onclick = window.open(_url);
